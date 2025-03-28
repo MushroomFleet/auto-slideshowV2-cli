@@ -38,11 +38,11 @@ python -m pip install --upgrade pip
 echo Done!
 echo.
 
-:: Install package in development mode
-echo Installing Auto-Slideshow...
-pip install -e .
+:: Install requirements
+echo Installing requirements...
+pip install -r requirements.txt
 if %errorlevel% neq 0 (
-    echo Error: Failed to install Auto-Slideshow.
+    echo Error: Failed to install requirements.
     echo.
     pause
     exit /b 1
@@ -61,7 +61,7 @@ echo Installation completed successfully!
 echo.
 echo To create slideshows:
 echo 1. Use run.bat to launch the slideshow creator
-echo 2. Or run directly with: venv\Scripts\python -m v2.main
+echo 2. Or run directly with: venv\Scripts\python autoslideshow.py
 echo ========================================
 echo.
 

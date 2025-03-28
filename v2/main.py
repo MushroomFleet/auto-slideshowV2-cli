@@ -276,7 +276,7 @@ def main():
         save_template(config, args.save_template)
     
     # Create slideshow generator
-    slideshow_generator = SlideshowGenerator(config)
+    slideshow_generator = SlideshowGenerator(config.config_path)
     
     # Register progress callback
     slideshow_generator.set_progress_callback(print_progress_bar)
