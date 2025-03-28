@@ -72,7 +72,7 @@ echo.
 echo Creating basic slideshow...
 echo.
 
-python -m v2.main "%FOLDER_PATH%" %OUTPUT_OPTION%
+python autoslideshow.py "%FOLDER_PATH%" %OUTPUT_OPTION%
 
 goto end
 
@@ -82,7 +82,7 @@ echo --- Create a Slideshow with a Template ---
 echo.
 
 :: List available templates
-python -m v2.main --list-templates
+python autoslideshow.py --list-templates
 
 echo.
 set /p TEMPLATE="Enter template name to use (or press Enter to cancel): "
@@ -110,7 +110,7 @@ echo.
 echo Creating slideshow with template !TEMPLATE!...
 echo.
 
-python -m v2.main "%FOLDER_PATH%" -t "!TEMPLATE!" %OUTPUT_OPTION%
+python autoslideshow.py "%FOLDER_PATH%" -t "!TEMPLATE!" %OUTPUT_OPTION%
 
 goto end
 
@@ -172,7 +172,7 @@ if /i "!KEN_BURNS!"=="y" (
     set KEN_BURNS_OPTION=
 )
 
-python -m v2.main --list-transitions
+python autoslideshow.py --list-transitions
 echo.
 set /p TRANSITION="Enter transition type (or 'random', press Enter for default): "
 if "!TRANSITION!"=="" (
@@ -216,7 +216,7 @@ echo.
 echo Creating custom slideshow...
 echo.
 
-python -m v2.main "%FOLDER_PATH%" %OUTPUT_OPTION% %DURATION_OPTION% %AUDIO_OPTION% %TITLE_OPTION% %CAPTIONS_OPTION% %KEN_BURNS_OPTION% %TRANSITION_OPTION% %COLOR_OPTION% %ASPECT_RATIO_OPTION%
+python autoslideshow.py "%FOLDER_PATH%" %OUTPUT_OPTION% %DURATION_OPTION% %AUDIO_OPTION% %TITLE_OPTION% %CAPTIONS_OPTION% %KEN_BURNS_OPTION% %TRANSITION_OPTION% %COLOR_OPTION% %ASPECT_RATIO_OPTION%
 
 goto end
 
@@ -225,7 +225,7 @@ echo.
 echo --- Available Transitions ---
 echo.
 
-python -m v2.main --list-transitions
+python autoslideshow.py --list-transitions
 
 pause
 goto end
@@ -235,7 +235,7 @@ echo.
 echo --- Available Templates ---
 echo.
 
-python -m v2.main --list-templates
+python autoslideshow.py --list-templates
 
 pause
 goto end
@@ -282,7 +282,7 @@ if /i "!KEN_BURNS!"=="y" (
     set KEN_BURNS_OPTION=
 )
 
-python -m v2.main --list-transitions
+python autoslideshow.py --list-transitions
 echo.
 set /p TRANSITION="Enter transition type (or 'random'): "
 if "!TRANSITION!"=="" (
@@ -341,7 +341,7 @@ echo Saving template !TEMPLATE_NAME!...
 echo.
 
 :: Run with --save-template to create the template
-python -m v2.main "temp_template_dir" %DURATION_OPTION% %TITLE_OPTION% %CAPTIONS_OPTION% %KEN_BURNS_OPTION% %TRANSITION_OPTION% %COLOR_OPTION% %ASPECT_RATIO_OPTION% --save-template "!TEMPLATE_NAME!"
+python autoslideshow.py "temp_template_dir" %DURATION_OPTION% %TITLE_OPTION% %CAPTIONS_OPTION% %KEN_BURNS_OPTION% %TRANSITION_OPTION% %COLOR_OPTION% %ASPECT_RATIO_OPTION% --save-template "!TEMPLATE_NAME!"
 
 rmdir /s /q temp_template_dir 2>nul
 

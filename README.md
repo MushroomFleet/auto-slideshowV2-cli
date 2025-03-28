@@ -4,8 +4,6 @@
 
 Create stunning slideshows from your image collections with advanced features and customization options! Auto-Slideshow V2 is a powerful command-line tool that transforms your images into professional-looking videos with smooth transitions, effects, audio support, and much more.
 
-! WORK IN PROGRESS !
-
 ## 🌟 What's New in V2
 
 Auto-Slideshow V2 has been completely redesigned with a modular architecture and many new features:
@@ -45,14 +43,9 @@ This will create a virtual environment, install all dependencies, and set up the
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
-2. Install dependencies:
+2. Install all required dependencies:
    ```bash
    pip install -r requirements.txt
-   ```
-
-3. Install the package in development mode:
-   ```bash
-   pip install -e .
    ```
 
 ## 🚀 Quick Start
@@ -71,16 +64,16 @@ This will guide you through creating slideshows with different options.
 
 ```bash
 # Basic usage
-python -m v2.main path/to/your/images
+python autoslideshow.py path/to/your/images
 
 # Specify output file
-python -m v2.main path/to/your/images -o my_slideshow.mp4
+python autoslideshow.py path/to/your/images -o my_slideshow.mp4
 
 # Use a template
-python -m v2.main path/to/your/images -t dynamic_story
+python autoslideshow.py path/to/your/images -t dynamic_story
 
 # Create a custom slideshow
-python -m v2.main path/to/your/images --title "My Vacation" --captions --ken-burns --transition fade --color-effect vintage
+python autoslideshow.py path/to/your/images --title "My Vacation" --captions --ken-burns --transition fade --color-effect vintage
 ```
 
 ## ⚙️ Configuration
@@ -121,10 +114,10 @@ You can create your own custom templates:
 
 ```bash
 # Create slideshow with your desired settings and save as a template
-python -m v2.main path/to/images --ken-burns --transition cube_rotation --duration 60 --save-template "my_template"
+python autoslideshow.py path/to/images --ken-burns --transition cube_rotation --duration 60 --save-template "my_template"
 
 # Use your template
-python -m v2.main path/to/images -t my_template
+python autoslideshow.py path/to/images -t my_template
 ```
 
 For more details on creating templates, see the [Templates Documentation](v2/docs/templates.md).
@@ -166,20 +159,26 @@ Add background music to your slideshows:
 ### Create a 30-second slideshow for Instagram:
 
 ```bash
-python -m v2.main my_vacation_photos -o instagram.mp4 -d 30 --aspect-ratio 1:1 --transition slide_right --captions --color-effect warm
+python autoslideshow.py my_vacation_photos -o instagram.mp4 -d 30 --aspect-ratio 1:1 --transition slide_right --captions --color-effect warm
 ```
 
 ### Create a presentation slideshow with title:
 
 ```bash
-python -m v2.main presentation_images -o presentation.mp4 --title "Quarterly Results" --transition fade --ken-burns
+python autoslideshow.py presentation_images -o presentation.mp4 --title "Quarterly Results" --transition fade --ken-burns
 ```
 
 ### Add background music:
 
 ```bash
-python -m v2.main wedding_photos -o wedding.mp4 -a background_music.mp3
+python autoslideshow.py wedding_photos -o wedding.mp4 -a background_music.mp3
 ```
+
+## 🔧 Recent Updates
+
+- Fixed installation issues by simplifying the dependency installation process
+- Resolved a type mismatch in the slideshow generator initialization
+- Updated command interface to use a more straightforward entry point
 
 ## 📚 Documentation
 
