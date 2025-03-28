@@ -4,6 +4,8 @@
 
 Create stunning slideshows from your image collections with advanced features and customization options! Auto-Slideshow V2 is a powerful command-line tool that transforms your images into professional-looking videos with smooth transitions, effects, audio support, and much more.
 
+! WORK IN PROGRESS !
+
 ## 🌟 What's New in V2
 
 Auto-Slideshow V2 has been completely redesigned with a modular architecture and many new features:
